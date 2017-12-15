@@ -11,7 +11,13 @@
 
 ```ruby
 class Cat
-  # 請完成實作
+  def initialize(name)
+    @name = name
+  end
+  
+  def name
+    @name
+  end
 end
 
 kitty = Cat.new("kitty")
@@ -30,9 +36,13 @@ profile = {name: "kk", age: 18}
 p profile["name"]
 ```
 
-會得到什麼結果? 為什麼?
+會得到什麼結果? 為什麼?<br><br>
+ans: 得到nil，因為陣列裡沒有"name"(字串)這個東西，要顯示"kk"的話，要改成p profile[:name]<br>
 
 3. (5 分) 如果要在 1 到 100 的數字當中，任意取出 5 個不重複的亂數，你會怎麼做？
+```
+puts [*1..100].sample(5)
+```
 
 4. (10 分)
 ```ruby
@@ -45,7 +55,8 @@ end
 Bank.transfer(10)
 ```
 
-上面這段程式碼執行後會發生什麼事？為什麼？如果有錯誤又該如何修正？
+上面這段程式碼執行後會發生什麼事？為什麼？如果有錯誤又該如何修正？<br><br>
+ans:出現方法未定義，因為ruby 沒有類別方法，但能透過singleton method的方式，此處錯誤修正方法：transfer --> self.transfer
 
 5. (10 分) 請問以下方法：
 
@@ -54,7 +65,10 @@ link_to "刪除", products_path(product), method: :delete, class: "btn btn-defau
 ```
 
 `link_to` 方法共有幾個參數？為什麼？
-
+ans: 三個參數，分別為[名稱]、[路徑]、[html設定(方法、class等)]，method、class被包一起視為一個參數，所以位置交換也沒關係，此方法原寫成：<br>
+```
+link_to ("刪除", products_path(product), {method: :delete, class: "btn btn-default"})
+```
 6. (10 分) 在 Ruby 裡面常會看到冒號的寫法，例如：
 
 有的冒號靠右邊：
@@ -77,7 +91,11 @@ link_to "檢視", books_path(book), class: "btn btn-default"
 user_profile = {name: "kk", age: 18, blood_type: :b_negative}
 ```
 
-請問，這三種寫法分別代表什麼意思呢？
+請問，這三種寫法分別代表什麼意思呢？<br>
+ans:<br>
+1.:products代表的是此為一個符號，跟普通變數很像，但卻是不可變更的<br>
+2.class: "btn btn-default"，這邊則為一般用法，將class設定為btn btn-default樣式<br>
+3.user_profile = {name: "kk", age: 18, blood_type: :b_negative}，使用兩個冒號表示要要將blood_type設定為:b_negative，但b_negative是一個不可變更的符號
 
 ## Rails 題目 (30 分)
 
