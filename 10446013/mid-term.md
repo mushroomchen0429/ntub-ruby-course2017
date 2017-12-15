@@ -93,15 +93,17 @@ user_profile = {name: "kk", age: 18, blood_type: :b_negative}
 
 請問，這三種寫法分別代表什麼意思呢？<br>
 ans:<br>
-1.:products代表的是此為一個符號，跟普通變數很像，但卻是不可變更的<br>
-2.class: "btn btn-default"，這邊則為一般用法，將class設定為btn btn-default樣式<br>
-3.user_profile = {name: "kk", age: 18, blood_type: :b_negative}，使用兩個冒號表示要要將blood_type設定為:b_negative，但b_negative是一個不可變更的符號
+1. :products代表的是此為一個符號，跟普通變數很像，但卻是不可變更的。<br>
+2. class: "btn btn-default"，這邊則為一般用法，將class設定為btn btn-default樣式。<br>
+3. user_profile = {name: "kk", age: 18, blood_type: :b_negative}，使用兩個冒號表示要要將blood_type設定為:b_negative，但b_negative是一個不可變更的符號。
 
 ## Rails 題目 (30 分)
 
-1. (10 分) 請簡述 `bundle install` 指令的用途。
+1. (10 分) 請簡述 `bundle install` 指令的用途。<br>
+ans: bundle install，自動下載並安裝要開啟的rails專案所需要的gemfile。
 
-2. (10 分) 請說明 `rails db:migrate` 這個指令的用途是什麼？
+2. (10 分) 請說明 `rails db:migrate` 這個指令的用途是什麼？<br>
+ans: rails db:migrate，執行將剛才migration出來的資料進行寫入當前資料庫的動作。
 
 3. (10 分) 假設某個 Controller 的程式碼如下：
 
@@ -121,7 +123,10 @@ end
 
 請問：
 - 第 3 行的 `@books` 前面的那個 `@` 是什麼意思？如果把 `@` 拿掉會發生什麼事？
-- 第 7 行以及第 8 行的 `@book`，如果把 `@` 拿掉會發生什麼事？為什麼？
+- 第 7 行以及第 8 行的 `@book`，如果把 `@` 拿掉會發生什麼事？為什麼？<br><br>
+ans:<br>
+1. @books的@是為了讓books變成instance variable ，讓他可以在不同方法間使用。<br>
+2. 在此段程式碼中不會出現錯誤，因為只是將值塞進book變數中，就算不使用instance variable也不會影響，但整個rails執行時，會因為找不到@book變數導致發生錯誤。
 
 ## Git 題目 (20 分)
 
