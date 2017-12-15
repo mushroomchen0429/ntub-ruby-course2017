@@ -64,7 +64,7 @@ ans:出現方法未定義，因為ruby 沒有類別方法，但能透過singleto
 link_to "刪除", products_path(product), method: :delete, class: "btn btn-default"
 ```
 
-`link_to` 方法共有幾個參數？為什麼？
+`link_to` 方法共有幾個參數？為什麼？<br>
 ans: 三個參數，分別為[名稱]、[路徑]、[html設定(方法、class等)]，method、class被包一起視為一個參數，所以位置交換也沒關係，此方法原寫成：<br>
 ```
 link_to ("刪除", products_path(product), {method: :delete, class: "btn btn-default"})
